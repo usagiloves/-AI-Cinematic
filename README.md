@@ -107,6 +107,8 @@ ai-cinematic-os/
 
 ### 1. Chuẩn bị môi trường & Tải dự án
 *   Cài đặt **Node.js** phiên bản 18 trở lên.
+*   Cài đặt **Python 3.10.x** (Khuyến nghị phiên bản **Python 3.10.6** để đạt độ tương thích tốt nhất với AUTOMATIC1111 và ComfyUI). Hãy chắc chắn tích chọn **"Add Python to PATH"** trong quá trình cài đặt.
+*   Cài đặt **FFmpeg** và cấu hình thêm thư mục `bin` của nó vào biến môi trường **PATH** của hệ thống (Đây là yêu cầu bắt buộc nếu bạn sử dụng các chức năng sinh chuyển động / video phân cảnh từ hình ảnh như AnimateDiff, Deforum trên ComfyUI hoặc AUTOMATIC1111).
 *   Tải dự án về máy bằng Git:
     ```bash
     git clone https://github.com/usagiloves/-AI-Cinematic.git
