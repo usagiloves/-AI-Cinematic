@@ -1,0 +1,138 @@
+/* ========================================
+   AI Cinematic OS — Design Tokens v2.0 (Blue Archive Arona Theme)
+   ======================================== */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  /* ─── Soft Cyber-Pastel Background Layers (Crisp Contrast Edition) ─── */
+  --color-bg-deep: #bae6fd;
+  --color-bg-primary: rgba(255, 255, 255, 0.88); /* More opaque white glass for solid contrast */
+  --color-bg-secondary: rgba(235, 246, 254, 0.82); /* Ice-blue glass */
+  --color-bg-tertiary: rgba(240, 249, 255, 0.88);
+  --color-bg-card: rgba(255, 255, 255, 0.9); /* Solid contrast card background */
+  --color-bg-glass: rgba(255, 255, 255, 0.6);
+  --color-bg-hover: rgba(14, 165, 233, 0.12);
+
+  /* ─── Surface Layers (Multi-level glassmorphism) ─── */
+  --color-surface-1: rgba(255, 255, 255, 0.75);
+  --color-surface-2: rgba(240, 249, 255, 0.85);
+  --color-surface-3: rgba(224, 242, 254, 0.9);
+  --color-surface-raised: rgba(255, 255, 255, 0.95);
+  --color-surface-overlay: rgba(255, 255, 255, 0.98);
+
+  /* ─── Pastel Accent Colors (Arona Theme) ─── */
+  --color-accent-purple: #0284c7; /* Darker vibrant sky blue for text contrast */
+  --color-accent-purple-light: #0ea5e9;
+  --color-accent-purple-dim: rgba(2, 132, 199, 0.08);
+  --color-accent-purple-glow: rgba(2, 132, 199, 0.3);
+  
+  --color-accent-cyan: #0891b2; /* Darker cyan for text contrast */
+  --color-accent-cyan-light: #06b6d4;
+  --color-accent-cyan-dim: rgba(8, 145, 178, 0.08);
+  --color-accent-cyan-glow: rgba(8, 145, 178, 0.3);
+  
+  --color-accent-magenta: #e11d48; /* Darker pastel ribbon pink */
+  --color-accent-magenta-dim: rgba(225, 29, 72, 0.08);
+  --color-accent-magenta-glow: rgba(225, 29, 72, 0.3);
+
+  --color-accent-blue: #1d4ed8;
+  --color-accent-blue-dim: rgba(29, 78, 216, 0.08);
+  --color-accent-amber: #b45309;
+  --color-accent-amber-dim: rgba(180, 83, 9, 0.08);
+  --color-accent-red: #be123c;
+  --color-accent-red-dim: rgba(190, 18, 60, 0.08);
+
+  /* ─── Actor Profile Colors ─── */
+  --color-actor-gold: #b45309;
+  --color-actor-gold-dim: rgba(180, 83, 9, 0.08);
+  --color-actor-emerald: #047857;
+  --color-actor-emerald-dim: rgba(4, 120, 87, 0.1);
+  --color-actor-rose: #be185d;
+  --color-actor-rose-dim: rgba(190, 24, 93, 0.1);
+
+  /* ─── Pastel Gradients ─── */
+  --gradient-primary: linear-gradient(135deg, #0284c7 0%, #0891b2 100%);
+  --gradient-purple: linear-gradient(135deg, #0284c7 0%, #0ea5e9 100%);
+  --gradient-cyan: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
+  --gradient-magenta: linear-gradient(135deg, #e11d48 0%, #fda4af 100%);
+  --gradient-dark: linear-gradient(180deg, #e0f2fe 0%, #bae6fd 100%);
+  --gradient-card: linear-gradient(145deg, rgba(255,255,255,0.92) 0%, rgba(224,242,254,0.75) 100%);
+  --gradient-glow: radial-gradient(ellipse at center, rgba(2,132,199,0.15) 0%, transparent 70%);
+  --gradient-hero: linear-gradient(135deg, rgba(2,132,199,0.1) 0%, rgba(8,145,178,0.06) 50%, rgba(225,29,72,0.05) 100%);
+  --gradient-border-animated: conic-gradient(from var(--border-angle, 0deg), #0284c7, #0891b2, #e11d48, #0ea5e9, #0284c7);
+  --gradient-neon-purple: linear-gradient(135deg, rgba(2,132,199,0.12) 0%, rgba(2,132,199,0) 100%);
+  --gradient-neon-cyan: linear-gradient(135deg, rgba(8,145,178,0.12) 0%, rgba(8,145,178,0) 100%);
+
+  /* ─── Ultra-Crisp High-Contrast Text ─── */
+  --text-primary: #0f172a; /* Slate 900 - maximum readability */
+  --text-secondary: #334155; /* Slate 700 - extremely clear */
+  --text-muted: #475569; /* Slate 600 - highly readable labels */
+  --text-bright: #020617; /* Slate 950 - heavy dark headers */
+  --text-accent: var(--color-accent-purple);
+
+  /* ─── Typography ─── */
+  --font-sans: 'Plus Jakarta Sans', 'Outfit', -apple-system, sans-serif;
+  --font-display: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  --text-xs: 0.7rem;
+  --text-sm: 0.8rem;
+  --text-base: 0.9rem;
+  --text-lg: 1.05rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 2rem;
+  --text-4xl: 2.5rem;
+
+  /* ─── Spacing ─── */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+
+  /* ─── Border & Radius ─── */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --radius-full: 9999px;
+  --border-subtle: 1px solid rgba(14, 165, 233, 0.12);
+  --border-glow: 1px solid rgba(14, 165, 233, 0.25);
+  --border-neon: 1px solid rgba(14, 165, 233, 0.45);
+
+  /* ─── Soft Cyber-Glow Shadows ─── */
+  --shadow-sm: 0 2px 10px rgba(15, 23, 42, 0.05);
+  --shadow-md: 0 4px 20px rgba(14, 165, 233, 0.08);
+  --shadow-lg: 0 10px 30px rgba(14, 165, 233, 0.12);
+  --shadow-xl: 0 20px 50px rgba(14, 165, 233, 0.16);
+  --shadow-glow-purple: 0 0 20px rgba(14, 165, 233, 0.22), 0 0 40px rgba(14, 165, 233, 0.08);
+  --shadow-glow-cyan: 0 0 20px rgba(6, 182, 212, 0.22), 0 0 40px rgba(6, 182, 212, 0.08);
+  --shadow-glow-magenta: 0 0 20px rgba(244, 63, 94, 0.18), 0 0 40px rgba(244, 63, 94, 0.06);
+  --shadow-neon-purple: 0 0 10px rgba(14, 165, 233, 0.3), 0 0 30px rgba(14, 165, 233, 0.15), 0 0 60px rgba(14, 165, 233, 0.08);
+  --shadow-neon-cyan: 0 0 10px rgba(6, 182, 212, 0.3), 0 0 30px rgba(6, 182, 212, 0.15), 0 0 60px rgba(6, 182, 212, 0.08);
+  --shadow-inner-glow: inset 0 1px 0 0 rgba(255, 255, 255, 0.4);
+
+  /* ─── Transitions ─── */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 400ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-spring: 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* ─── Layout ─── */
+  --sidebar-width: 260px;
+  --sidebar-collapsed: 68px;
+  --header-height: 0px;
+  --panel-gap: var(--space-5);
+}
+
+/* ─── Animated border angle property ─── */
+@property --border-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}

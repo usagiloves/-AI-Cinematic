@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AI Cinematic Operating System - Multi-provider AI workflow dashboard with AUTOMATIC1111 & ComfyUI integration">
+  <meta name="theme-color" content="#0c0c18">
+  <meta property="og:title" content="AI Cinematic OS">
+  <meta property="og:description" content="Multi-provider AI workflow dashboard with image generation">
+  <meta property="og:type" content="website">
+  <title>🎬 AI Cinematic OS</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎬</text></svg>">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/variables.css?v=2.5">
+  <link rel="stylesheet" href="/css/base.css?v=2.5">
+  <link rel="stylesheet" href="/css/components.css?v=2.5">
+  <link rel="stylesheet" href="/css/dashboard.css?v=2.5">
+  <link rel="stylesheet" href="/css/animations.css?v=2.5">
+  <link rel="stylesheet" href="/css/responsive.css?v=2.5">
+</head>
+<body>
+  <div class="app-container" id="app">
+    <!-- Ambient Particles -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar"></aside>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <header class="main-header" id="mainHeader">
+        <div class="main-header-title">
+          <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">☰</button>
+          <span id="headerIcon">📊</span>
+          <span id="headerTitle">Dashboard</span>
+        </div>
+        <div class="main-header-actions" id="headerActions"></div>
+      </header>
+
+      <div class="main-body" id="mainBody">
+        <!-- Dashboard Section -->
+        <section class="section-panel active" id="section-dashboard"></section>
+
+        <!-- Chat Section -->
+        <section class="section-panel" id="section-chat"></section>
+
+        <!-- Image Generation Section -->
+        <section class="section-panel" id="section-image"></section>
+
+        <!-- Workflow Section -->
+        <section class="section-panel" id="section-workflow"></section>
+
+        <!-- Actor Profile Section -->
+        <section class="section-panel" id="section-actors"></section>
+
+        <!-- Providers Section -->
+        <section class="section-panel" id="section-providers"></section>
+
+        <!-- API Keys Section -->
+        <section class="section-panel" id="section-keys"></section>
+
+        <!-- Token Monitor Section -->
+        <section class="section-panel" id="section-tokens"></section>
+
+        <!-- Queue Section -->
+        <section class="section-panel" id="section-queue"></section>
+      </div>
+    </main>
+
+    <!-- Toast Notifications -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+      <button class="lightbox-close" id="lightboxClose">✕</button>
+      <div class="lightbox-content" id="lightboxContent"></div>
+    </div>
+  </div>
+
+  <!-- JS Modules -->
+  <script src="/js/utils/storage.js?v=2.5"></script>
+  <script src="/js/utils/sse.js?v=2.5"></script>
+  <script src="/js/utils/charts.js?v=2.5"></script>
+  <script src="/js/api.js?v=2.5"></script>
+  <script src="/js/components/toast.js?v=2.5"></script>
+  <script src="/js/components/sidebar.js?v=2.5"></script>
+  <script src="/js/components/provider-cards.js?v=2.5"></script>
+  <script src="/js/components/chat-panel.js?v=2.5"></script>
+  <script src="/js/components/image-gen-panel.js?v=2.5"></script>
+  <script src="/js/components/image-gallery.js?v=2.5"></script>
+  <script src="/js/components/workflow-panel.js?v=2.5"></script>
+  <script src="/js/components/token-monitor.js?v=2.5"></script>
+  <script src="/js/components/key-manager.js?v=2.5"></script>
+  <script src="/js/components/task-queue.js?v=2.5"></script>
+  <script src="/js/components/actor-profile.js?v=2.5"></script>
+  <script src="/js/app.js?v=2.5"></script>
+</body>
+</html>
