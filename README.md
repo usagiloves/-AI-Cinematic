@@ -105,13 +105,16 @@ ai-cinematic-os/
 
 ## 🛠️ Hướng dẫn cài đặt & Cấu hình nhanh
 
-### 1. Chuẩn bị môi trường
+### 1. Chuẩn bị môi trường & Tải dự án
 *   Cài đặt **Node.js** phiên bản 18 trở lên.
-*   (Tùy chọn) Cài đặt **Ollama** nếu muốn chạy mô hình ngôn ngữ lớn nội bộ (ví dụ: `qwen2.5`, `llama3`).
-*   (Tùy chọn) Mở sẵn **AUTOMATIC1111** (chạy kèm cờ `--api`) hoặc **ComfyUI** nếu muốn tạo ảnh minh họa tự động.
+*   Tải dự án về máy bằng Git:
+    ```bash
+    git clone https://github.com/usagiloves/-AI-Cinematic.git
+    cd -AI-Cinematic
+    ```
 
 ### 2. Cài đặt các gói phụ thuộc
-Tải dự án về máy, mở terminal tại thư mục gốc và chạy:
+Tại thư mục gốc của dự án, mở terminal và chạy lệnh:
 ```bash
 npm install
 ```
@@ -126,6 +129,7 @@ OPENAI_API_KEY=your_openai_key_here
 GEMINI_API_KEY=your_gemini_key_here
 CLAUDE_API_KEY=your_claude_key_here
 DEEPSEEK_API_KEY=your_deepseek_key_here
+SILICONFLOW_API_KEY=your_siliconflow_key_here
 
 # Địa chỉ kết nối LLM nội bộ (Ollama)
 OLLAMA_URL=http://localhost:11434
@@ -134,6 +138,31 @@ OLLAMA_URL=http://localhost:11434
 A1111_URL=http://localhost:7860
 COMFYUI_URL=http://localhost:8188
 ```
+> [!TIP]
+> Ngoài việc cấu hình trực tiếp qua file `.env`, bạn cũng có thể mở Dashboard của dự án lên và nhập trực tiếp các API Key này thông qua tab **API Keys** trên thanh Sidebar. Các khóa này sẽ được mã hóa và lưu trữ cục bộ vào file `data/keys.json`.
+
+### 4. Cấu hình các dịch vụ tích hợp (Tùy chọn)
+
+#### A. Trợ lý chạy Offline với Ollama (LLM Cục bộ)
+1. Tải và cài đặt Ollama từ trang chủ: [https://ollama.com](https://ollama.com).
+2. Tải mô hình ngôn ngữ lớn (ví dụ: `qwen2.5` hoặc `llama3`):
+   ```bash
+   ollama run qwen2.5
+   ```
+3. Đảm bảo Ollama đang chạy tại địa chỉ mặc định `http://localhost:11434` trước khi khởi động server.
+
+#### B. Tạo ảnh với AUTOMATIC1111 (Stable Diffusion WebUI)
+1. Cài đặt Stable Diffusion WebUI theo hướng dẫn từ trang chủ.
+2. Để tích hợp với Dashboard này, bạn cần kích hoạt API bằng cách chỉnh sửa file khởi động `webui-user.bat` (trên Windows), thêm cờ `--api` và `--cors-allow-origins=*` vào dòng `COMMANDLINE_ARGS`:
+   ```bat
+   set COMMANDLINE_ARGS=--api --cors-allow-origins=* --enable-insecure-extension-access
+   ```
+3. Chạy file `webui-user.bat` để khởi động WebUI. Địa chỉ mặc định là `http://localhost:7860`.
+
+#### C. Tạo ảnh với ComfyUI
+1. Tải và cài đặt ComfyUI.
+2. Khởi chạy ComfyUI bình thường (mặc định tại `http://localhost:8188`).
+3. Đảm bảo bạn có sẵn mô hình checkpoint tương ứng trong thư mục `models/checkpoints/` của ComfyUI.
 
 ---
 
@@ -141,17 +170,18 @@ COMFYUI_URL=http://localhost:8188
 
 Bắt đầu chạy server Node.js ở chế độ phát triển:
 ```bash
-npm start
-```
-*Hoặc bạn cũng có thể chạy lệnh:*
-```bash
 npm run dev
+```
+Hoặc chạy ở chế độ production:
+```bash
+npm start
 ```
 
 Sau khi server khởi động thành công:
-1.  Mở trình duyệt web và truy cập: `http://localhost:3000`
-2.  Giao diện **AI Cinematic OS v2.5** mờ ảo tuyệt đẹp với hình nền lớp học Arona sẽ xuất hiện.
-3.  Truy cập menu **Workflow** ở thanh bên (Sidebar), chọn một Template (như *Anime Script Generator*), nhập ý tưởng và theo dõi Trợ lý Arona thực hiện công việc từng bước.
+1. Mở trình duyệt web và truy cập: `http://localhost:3000`
+2. Giao diện **AI Cinematic OS v2.5** mờ ảo tuyệt đẹp với hình nền lớp học Arona sẽ xuất hiện.
+3. Truy cập menu **API Keys** trên thanh Sidebar để điền các khóa API mong muốn.
+4. Truy cập menu **Workflow**, chọn một Template (như *Anime Script Generator*), nhập ý tưởng và theo dõi Trợ lý Arona thực hiện quy trình tự động!
 
 ---
 
